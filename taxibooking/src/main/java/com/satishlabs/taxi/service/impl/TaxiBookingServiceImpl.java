@@ -20,8 +20,18 @@ public class TaxiBookingServiceImpl implements TaxiBookingService{
 	
 	@Override
 	public TaxiBooking creatingBooking(TaxiBooking booking) {
+        if(booking.getId() != null){
+            TaxiBooking taxiBooking = taxiBookingRepository.findById(booking.getId()).orElseThrow(() ->new RuntimeException("Booking not found"));
+            taxiBooking.setPickupLocation(booking.getPickupLocation());
+            taxiBooking.setPickupTime(booking.getPickupTime());
+            taxiBooking.setDropLocation(booking.getDropLocation());
+            taxiBooking.setUsername(booking.getUsername());
+            taxiBooking.setStatus(booking.getStatus());
+
+            return taxiBookingRepository.save(booking); //save updated entity
+        }
 		// TODO Auto-generated method stub
-		return taxiBookingRepository.save(booking);
+		return taxiBookingRepository.save(booking); //new booking
 	}
 
 	@Override

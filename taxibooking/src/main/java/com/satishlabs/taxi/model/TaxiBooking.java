@@ -4,13 +4,7 @@ import java.time.LocalDateTime;
 
 import com.satishlabs.taxi.enums.BookingStatus;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "taxibooking")
@@ -27,7 +21,10 @@ public class TaxiBooking {
 	@Enumerated(EnumType.STRING)
 	private BookingStatus status;
 
-	public TaxiBooking() {
+    @Version
+    private Long version;
+
+    public TaxiBooking() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -80,12 +77,25 @@ public class TaxiBooking {
 		this.status = status;
 	}
 
-	@Override
-	public String toString() {
-		return "TaxiBooking [id=" + id + ", username=" + username + ", pickupLocation=" + pickupLocation
-				+ ", pickupTime=" + pickupTime + ", dropLocation=" + dropLocation + ", status=" + status + "]";
-	}
-	
-	
+    public Long getVersion() {
+        return version;
+    }
 
+    public void setVersion(Long version) {
+        this.version = version;
+    }
+
+
+    @Override
+    public String toString() {
+        return "TaxiBooking{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", pickupLocation='" + pickupLocation + '\'' +
+                ", pickupTime=" + pickupTime +
+                ", dropLocation='" + dropLocation + '\'' +
+                ", status=" + status +
+                ", version=" + version +
+                '}';
+    }
 }

@@ -1,0 +1,14 @@
+Create database:
+create database employee_portal;
+
+
+Insert record:
+insert into emplyess values(1, "Satish", "Prasad", "satish@gmail.com","IT",80000.0);
+insert into employess values(2, "Anu", "Prasad", "anu@gmail.com","IT",60000.0);
+insert into employess values(3, "Kumar", "Kundan", "kumar@gmail.com","HR",90000.0);
+insert into employess values(4, "Dharm", "Kumar", "dharm@gmail.com","HR",80000.0);
+insert into employess values(5, "Ved", "Prakash", "ved@gmail.com","HR",70000.0);
+
+
+
+http://localhost:8080/swagger-ui/index.html

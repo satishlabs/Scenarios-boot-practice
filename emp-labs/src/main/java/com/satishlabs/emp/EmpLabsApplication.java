@@ -1,14 +1,13 @@
-package com.satishlabs.taxi;
+package com.satishlabs.emp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TaxibookingApplication {
+public class EmpLabsApplication {
 
 	public static void main(String[] args) {
-
-        SpringApplication.run(TaxibookingApplication.class, args);
+		SpringApplication.run(EmpLabsApplication.class, args);
 	}
 
 }
